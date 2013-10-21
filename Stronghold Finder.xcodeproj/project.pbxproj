@@ -15,14 +15,15 @@
 		448BF1201815B26D00EF99C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF11F1815B26D00EF99C2 /* AppDelegate.m */; };
 		448BF1231815B26D00EF99C2 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448BF1211815B26D00EF99C2 /* Main_iPhone.storyboard */; };
 		448BF1261815B26D00EF99C2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448BF1241815B26D00EF99C2 /* Main_iPad.storyboard */; };
-		448BF1291815B26D00EF99C2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF1281815B26D00EF99C2 /* FirstViewController.m */; };
-		448BF12C1815B26D00EF99C2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF12B1815B26D00EF99C2 /* SecondViewController.m */; };
+		448BF1291815B26D00EF99C2 /* LocateStrongholdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF1281815B26D00EF99C2 /* LocateStrongholdController.m */; };
+		448BF12C1815B26D00EF99C2 /* PlotStrongholdsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF12B1815B26D00EF99C2 /* PlotStrongholdsController.m */; };
 		448BF12E1815B26D00EF99C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448BF12D1815B26D00EF99C2 /* Images.xcassets */; };
 		448BF1351815B26D00EF99C2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1341815B26D00EF99C2 /* XCTest.framework */; };
 		448BF1361815B26D00EF99C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF10F1815B26D00EF99C2 /* Foundation.framework */; };
 		448BF1371815B26D00EF99C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1131815B26D00EF99C2 /* UIKit.framework */; };
 		448BF13F1815B26D00EF99C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 448BF13D1815B26D00EF99C2 /* InfoPlist.strings */; };
 		448BF1411815B26D00EF99C2 /* Stronghold_FinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF1401815B26D00EF99C2 /* Stronghold_FinderTests.m */; };
+		448BF1961815CBFE00EF99C2 /* StrongholdUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 448BF1951815CBFE00EF99C2 /* StrongholdUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +49,18 @@
 		448BF11F1815B26D00EF99C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		448BF1221815B26D00EF99C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		448BF1251815B26D00EF99C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		448BF1271815B26D00EF99C2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		448BF1281815B26D00EF99C2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		448BF12A1815B26D00EF99C2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		448BF12B1815B26D00EF99C2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		448BF1271815B26D00EF99C2 /* LocateStrongholdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocateStrongholdController.h; sourceTree = "<group>"; };
+		448BF1281815B26D00EF99C2 /* LocateStrongholdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocateStrongholdController.m; sourceTree = "<group>"; };
+		448BF12A1815B26D00EF99C2 /* PlotStrongholdsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlotStrongholdsController.h; sourceTree = "<group>"; };
+		448BF12B1815B26D00EF99C2 /* PlotStrongholdsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlotStrongholdsController.m; sourceTree = "<group>"; };
 		448BF12D1815B26D00EF99C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		448BF1331815B26D00EF99C2 /* Stronghold FinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stronghold FinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		448BF1341815B26D00EF99C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		448BF13C1815B26D00EF99C2 /* Stronghold FinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Stronghold FinderTests-Info.plist"; sourceTree = "<group>"; };
 		448BF13E1815B26D00EF99C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		448BF1401815B26D00EF99C2 /* Stronghold_FinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stronghold_FinderTests.m; sourceTree = "<group>"; };
+		448BF1941815CBFE00EF99C2 /* StrongholdUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrongholdUtility.h; sourceTree = "<group>"; };
+		448BF1951815CBFE00EF99C2 /* StrongholdUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrongholdUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +123,13 @@
 				448BF11E1815B26D00EF99C2 /* AppDelegate.h */,
 				448BF11F1815B26D00EF99C2 /* AppDelegate.m */,
 				448BF1211815B26D00EF99C2 /* Main_iPhone.storyboard */,
+				448BF1941815CBFE00EF99C2 /* StrongholdUtility.h */,
+				448BF1951815CBFE00EF99C2 /* StrongholdUtility.m */,
 				448BF1241815B26D00EF99C2 /* Main_iPad.storyboard */,
-				448BF1271815B26D00EF99C2 /* FirstViewController.h */,
-				448BF1281815B26D00EF99C2 /* FirstViewController.m */,
-				448BF12A1815B26D00EF99C2 /* SecondViewController.h */,
-				448BF12B1815B26D00EF99C2 /* SecondViewController.m */,
+				448BF1271815B26D00EF99C2 /* LocateStrongholdController.h */,
+				448BF1281815B26D00EF99C2 /* LocateStrongholdController.m */,
+				448BF12A1815B26D00EF99C2 /* PlotStrongholdsController.h */,
+				448BF12B1815B26D00EF99C2 /* PlotStrongholdsController.m */,
 				448BF12D1815B26D00EF99C2 /* Images.xcassets */,
 				448BF1161815B26D00EF99C2 /* Supporting Files */,
 			);
@@ -258,9 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				448BF12C1815B26D00EF99C2 /* SecondViewController.m in Sources */,
+				448BF12C1815B26D00EF99C2 /* PlotStrongholdsController.m in Sources */,
 				448BF1201815B26D00EF99C2 /* AppDelegate.m in Sources */,
-				448BF1291815B26D00EF99C2 /* FirstViewController.m in Sources */,
+				448BF1291815B26D00EF99C2 /* LocateStrongholdController.m in Sources */,
+				448BF1961815CBFE00EF99C2 /* StrongholdUtility.m in Sources */,
 				448BF11C1815B26D00EF99C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,7 @@
 				448BF1461815B26D00EF99C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		448BF1471815B26D00EF99C2 /* Build configuration list for PBXNativeTarget "Stronghold FinderTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				448BF1491815B26D00EF99C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

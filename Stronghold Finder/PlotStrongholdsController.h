@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  Stronghold Finder
 //
 //  Created by Winston Weinert on 10/21/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface PlotStrongholdsController : UIViewController
 
 @end
