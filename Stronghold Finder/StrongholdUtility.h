@@ -17,6 +17,8 @@
 - (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ;
 - (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF;
 
+- (NSString *)description;
+
 @end
 
 

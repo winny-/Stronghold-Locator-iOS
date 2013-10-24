@@ -30,6 +30,11 @@
     self.f = [myF copy];
     return self;
 }
+
+- (NSString *)description {
+    return [[NSString alloc] initWithFormat:@"SVector X=%@ Z=%@ F=%@", self.x, self.z, self.f];
+}
+
 @end
 
 
@@ -63,7 +68,7 @@
     tmp = f2 * (z+z2);
     x = tmp - x2;
     
-    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithFloat:x] Z:[[NSNumber alloc] initWithFloat:z]];
+    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5] Z:[[NSNumber alloc] initWithInt:z + 0.5]];
 }
 
 + (float)radians:(float)degrees {

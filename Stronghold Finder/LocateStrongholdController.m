@@ -28,37 +28,84 @@
 }
 
 - (IBAction)locate:(id)sender {
+    self.inputIsValid = YES;
+    [self textFieldShouldReturn:nil];
+    
+    NSNumber *x1Number = [self parseNumberFromTextField:self.x1TextField];
+    NSNumber *z1Number = [self parseNumberFromTextField:self.z1TextField];
+    NSNumber *f1Number = [self parseNumberFromTextField:self.f1TextField];
+    
+    NSNumber *x2Number = [self parseNumberFromTextField:self.x2TextField];
+    NSNumber *z2Number = [self parseNumberFromTextField:self.z2TextField];
+    NSNumber *f2Number = [self parseNumberFromTextField:self.f2TextField];
+    
+    if (!self.inputIsValid) {
+        NSLog(@"Invalid input, returning.");
+        return;
+    }
+
+    self.x1TextField.backgroundColor = [UIColor whiteColor];
+    self.z1TextField.backgroundColor = [UIColor whiteColor];
+    self.f1TextField.backgroundColor = [UIColor whiteColor];
+
+    self.x2TextField.backgroundColor = [UIColor whiteColor];
+    self.z2TextField.backgroundColor = [UIColor whiteColor];
+    self.f2TextField.backgroundColor = [UIColor whiteColor];
+
+    
+    SVector *result;
+    SVector *location1, *location2;
+    
+    location1 = [[SVector alloc] initWithX:x1Number Z:z1Number F:f1Number];
+    location2 = [[SVector alloc] initWithX:x2Number Z:z2Number F:f2Number];
+    NSLog(@"location1=%@", location1);
+    NSLog(@"location2=%@", location2);
+    
+    result = [StrongholdUtility locateStrongholdWithVector1:location1 Vector2:location2];
+    
+    self.xResultNumber = [result.x copy];
+    self.zResultNumber = [result.z copy];
+    
+    self.xResultLabel.text = result.x.stringValue;
+    self.zResultLabel.text = result.z.stringValue;
+    
+    self.xResultLabel.hidden = NO;
+    self.zResultLabel.hidden = NO;
+    self.sendCoordinatesToPasteboardButton.hidden = NO;
+}
+
+- (NSNumber *)parseNumberFromTextField:(UITextField *)theTextField {
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterNoStyle];
     
-    NSNumber *x1Number = [f numberFromString:self.x1.text];
-    NSNumber *z1Number = [f numberFromString:self.z1.text];
-    NSNumber *f1Number = [f numberFromString:self.f1.text];
+    NSNumber *value = [f numberFromString:theTextField.text];
     
-    NSNumber *x2Number = [f numberFromString:self.x2.text];
-    NSNumber *z2Number = [f numberFromString:self.z2.text];
-    NSNumber *f2Number = [f numberFromString:self.f2.text];
+    if (value == nil) {
+        self.inputIsValid = NO;
+        theTextField.backgroundColor = [UIColor redColor];
+    }
     
-    SVector *result;
-    
-    result = [StrongholdUtility locateStrongholdWithVector1:[[SVector alloc] initWithX:x1Number Z:z1Number F:f1Number] Vector2:[[SVector alloc] initWithX:x2Number Z:z2Number F:f2Number]];
-    
-    self.x.text = result.x.stringValue;
-    self.z.text = result.z.stringValue;
+    return value;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [self.x1 resignFirstResponder];
-    [self.z1 resignFirstResponder];
-    [self.f1 resignFirstResponder];
+    [self.x1TextField resignFirstResponder];
+    [self.z1TextField resignFirstResponder];
+    [self.f1TextField resignFirstResponder];
     
-    [self.x2 resignFirstResponder];
-    [self.z2 resignFirstResponder];
-    [self.f2 resignFirstResponder];
-    
-    [self.x resignFirstResponder];
-    [self.z resignFirstResponder];
+    [self.x2TextField resignFirstResponder];
+    [self.z2TextField resignFirstResponder];
+    [self.f2TextField resignFirstResponder];
     
     return YES;
+}
+
+- (IBAction)sendCoordinatesToPasteboard:(id)sender {
+    [self textFieldShouldReturn:nil];
+
+    NSString *coordinatePair = [[NSString alloc] initWithFormat:@"%@, %@", self.xResultNumber, self.zResultNumber];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    
+    [pasteboard setValue:coordinatePair forPasteboardType:@"public.utf8-plain-text"]; // see document titled: System-Declared Uniform Type Identifiers
 }
 @end
