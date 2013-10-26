@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocateStrongholdController : UIViewController <UITextFieldDelegate>
+@interface LocateStrongholdModelController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *x1TextField;
 @property (weak, nonatomic) IBOutlet UITextField *z1TextField;

@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Winston Weinert. All rights reserved.
 //
 
-#import "LocateStrongholdController.h"
+#import "LocateStrongholdModelController.h"
 #import "StrongholdUtility.h"
 
-@interface LocateStrongholdController ()
+@interface LocateStrongholdModelController ()
 
 @end
 
-@implementation LocateStrongholdController
+@implementation LocateStrongholdModelController
 
 - (void)viewDidLoad
 {
@@ -43,15 +43,6 @@
         NSLog(@"Invalid input, returning.");
         return;
     }
-
-    self.x1TextField.backgroundColor = [UIColor whiteColor];
-    self.z1TextField.backgroundColor = [UIColor whiteColor];
-    self.f1TextField.backgroundColor = [UIColor whiteColor];
-
-    self.x2TextField.backgroundColor = [UIColor whiteColor];
-    self.z2TextField.backgroundColor = [UIColor whiteColor];
-    self.f2TextField.backgroundColor = [UIColor whiteColor];
-
     
     SVector *result;
     SVector *location1, *location2;
@@ -83,6 +74,8 @@
     if (value == nil) {
         self.inputIsValid = NO;
         theTextField.backgroundColor = [UIColor redColor];
+    } else {
+        theTextField.backgroundColor = [UIColor whiteColor];
     }
     
     return value;

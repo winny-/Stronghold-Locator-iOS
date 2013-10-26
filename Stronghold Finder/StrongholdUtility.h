@@ -7,6 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <math.h>
+
+typedef enum {
+    SVectorRotateClockwise,
+    SVectorRotateCounterclockwise
+} SVectorRotatateDirection;
+
+#define radians(degrees) degrees * (M_PI / 180)
 
 @interface SVector : NSObject
 
@@ -25,5 +33,6 @@
 @interface StrongholdUtility : NSObject
 
 + (SVector *)locateStrongholdWithVector1:(SVector *)vector1 Vector2:(SVector *)vector2;
++ (NSDictionary *)guessStrongholdLocations:(SVector *)knownStrongholdLocation;
 
 @end

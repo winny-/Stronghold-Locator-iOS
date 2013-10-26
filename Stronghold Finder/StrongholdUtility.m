@@ -7,7 +7,6 @@
 //
 
 #import "StrongholdUtility.h"
-#import <math.h>
 
 @implementation SVector
 
@@ -31,8 +30,18 @@
     return self;
 }
 
+- (SVector *)rotate:(SVectorRotatateDirection)direction {
+    float multiplier = (direction == SVectorRotateClockwise) ? -1 : 1;
+    float r = radians(120 * multiplier);
+    
+    float x = cosf(r) * self.x.floatValue + -sinf(r) * self.z.floatValue;
+    float z = sinf(r) * self.x.floatValue + cosf(r) * self.z.floatValue;
+    
+    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithFloat:x] Z:[[NSNumber alloc] initWithFloat:z]];
+}
+
 - (NSString *)description {
-    return [[NSString alloc] initWithFormat:@"SVector X=%@ Z=%@ F=%@", self.x, self.z, self.f];
+    return [[NSString alloc] initWithFormat:@"<SVector X=%@ Z=%@ F=%@>", self.x, self.z, self.f];
 }
 
 @end
@@ -44,12 +53,12 @@
     float x1 = -vector1.x.floatValue;
     float z1 = -vector1.z.floatValue;
     float f1 = -vector1.f.floatValue;
-    f1 = tanf([self radians:f1]);
+    f1 = tanf(radians(f1));
     
     float x2 = -vector2.x.floatValue;
     float z2 = -vector2.z.floatValue;
     float f2 = -vector2.f.floatValue;
-    f2 = tanf([self radians:f2]);
+    f2 = tanf(radians(f2));
     
     float tmp_z1, tmp_z2, tmp_f1, tmp;
     float x, z;
@@ -71,8 +80,13 @@
     return [[SVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5] Z:[[NSNumber alloc] initWithInt:z + 0.5]];
 }
 
-+ (float)radians:(float)degrees {
-    return degrees * (M_PI / 180);
+
++ (NSDictionary *)guessStrongholdLocations:(SVector *)knownStrongholdLocation {
+    return @{
+             @"known": knownStrongholdLocation,
+             @"clockwise": [knownStrongholdLocation rotate:SVectorRotateClockwise],
+             @"counterclockwise": [knownStrongholdLocation rotate:SVectorRotateCounterclockwise]
+             };
 }
 
 @end
