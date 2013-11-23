@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.sendCoordinatesToPasteboardButton setTitle:@"Copy Coordinates" forState:UIControlStateNormal];
+    [self.sendCoordinatesToPasteboardButton setTitle:@"Copied" forState:UIControlStateDisabled];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +65,7 @@
     self.xResultLabel.hidden = NO;
     self.zResultLabel.hidden = NO;
     self.sendCoordinatesToPasteboardButton.hidden = NO;
+    [self.sendCoordinatesToPasteboardButton setEnabled:YES];
 }
 
 - (NSNumber *)parseNumberFromTextField:(UITextField *)theTextField {
@@ -82,13 +85,30 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [self.x1TextField resignFirstResponder];
-    [self.z1TextField resignFirstResponder];
-    [self.f1TextField resignFirstResponder];
-    
-    [self.x2TextField resignFirstResponder];
-    [self.z2TextField resignFirstResponder];
-    [self.f2TextField resignFirstResponder];
+    if (theTextField == self.x1TextField) {
+        [self.z1TextField becomeFirstResponder];
+    } else if (theTextField == self.z1TextField) {
+        [self.f1TextField becomeFirstResponder];
+    } else if (theTextField == self.f1TextField) {
+        [self.x2TextField becomeFirstResponder];
+    } else if (theTextField == self.x2TextField) {
+        [self.z2TextField becomeFirstResponder];
+    } else if (theTextField == self.z2TextField) {
+        [self.f2TextField becomeFirstResponder];
+    } else if (theTextField == self.f2TextField) {
+        [self.f2TextField resignFirstResponder];
+        [self locate:nil];
+    } else {
+        [self.x1TextField resignFirstResponder];
+        [self.z1TextField resignFirstResponder];
+        [self.f1TextField resignFirstResponder];
+        
+        [self.x2TextField resignFirstResponder];
+        [self.z2TextField resignFirstResponder];
+        [self.f2TextField resignFirstResponder];
+    }
+
+
     
     return YES;
 }
@@ -100,5 +120,6 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     
     [pasteboard setValue:coordinatePair forPasteboardType:@"public.utf8-plain-text"]; // see document titled: System-Declared Uniform Type Identifiers
+    [self.sendCoordinatesToPasteboardButton setEnabled:NO];
 }
 @end

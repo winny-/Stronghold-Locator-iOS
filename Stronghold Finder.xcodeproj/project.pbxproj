@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		444E0E881819F44000C6AEAA /* PlotStrongholdContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 444E0E871819F44000C6AEAA /* PlotStrongholdContainerViewController.m */; };
 		448BF1101815B26D00EF99C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF10F1815B26D00EF99C2 /* Foundation.framework */; };
 		448BF1121815B26D00EF99C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1111815B26D00EF99C2 /* CoreGraphics.framework */; };
 		448BF1141815B26D00EF99C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1131815B26D00EF99C2 /* UIKit.framework */; };
@@ -38,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		444E0E861819F44000C6AEAA /* PlotStrongholdContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlotStrongholdContainerViewController.h; path = ../PlotStrongholdContainerViewController.h; sourceTree = "<group>"; };
-		444E0E871819F44000C6AEAA /* PlotStrongholdContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlotStrongholdContainerViewController.m; path = ../PlotStrongholdContainerViewController.m; sourceTree = "<group>"; };
 		448BF10C1815B26D00EF99C2 /* Stronghold Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stronghold Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		448BF10F1815B26D00EF99C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		448BF1111815B26D00EF99C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,8 +120,6 @@
 		448BF1151815B26D00EF99C2 /* Stronghold Finder */ = {
 			isa = PBXGroup;
 			children = (
-				444E0E861819F44000C6AEAA /* PlotStrongholdContainerViewController.h */,
-				444E0E871819F44000C6AEAA /* PlotStrongholdContainerViewController.m */,
 				448BF11E1815B26D00EF99C2 /* AppDelegate.h */,
 				448BF11F1815B26D00EF99C2 /* AppDelegate.m */,
 				448BF1211815B26D00EF99C2 /* Main_iPhone.storyboard */,
@@ -217,6 +212,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Winston Weinert";
 				TargetAttributes = {
+					448BF10B1815B26D00EF99C2 = {
+						DevelopmentTeam = FSGVQVEJ72;
+					};
 					448BF1321815B26D00EF99C2 = {
 						TestTargetID = 448BF10B1815B26D00EF99C2;
 					};
@@ -269,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				448BF12C1815B26D00EF99C2 /* PlotStrongholdsModelController.m in Sources */,
-				444E0E881819F44000C6AEAA /* PlotStrongholdContainerViewController.m in Sources */,
 				448BF1201815B26D00EF99C2 /* AppDelegate.m in Sources */,
 				448BF1291815B26D00EF99C2 /* LocateStrongholdModelController.m in Sources */,
 				448BF1961815CBFE00EF99C2 /* StrongholdUtility.m in Sources */,
@@ -410,10 +407,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stronghold Finder/Stronghold Finder-Prefix.pch";
 				INFOPLIST_FILE = "Stronghold Finder/Stronghold Finder-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,10 +424,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stronghold Finder/Stronghold Finder-Prefix.pch";
 				INFOPLIST_FILE = "Stronghold Finder/Stronghold Finder-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
