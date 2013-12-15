@@ -19,8 +19,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.sendCoordinatesToPasteboardButton setTitle:@"Copy Coordinates" forState:UIControlStateNormal];
-    [self.sendCoordinatesToPasteboardButton setTitle:@"Copied" forState:UIControlStateDisabled];
 }
 
 - (void)didReceiveMemoryWarning
