@@ -7,28 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StrongholdUtility.h"
 
 @interface PlotStrongholdsModelController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *xTextField;
-@property (weak, nonatomic) IBOutlet UITextField *zTextField;
+@property (weak, nonatomic) IBOutlet UITextField *knownTextField;
 
-@property (strong) NSNumber *xKnownNumber;
-@property (strong) NSNumber *zKnownNumber;
-@property BOOL inputIsValid;
+@property (strong) SVector *knownLocation;
+@property (strong) SVector *clockwiseLocation;
+@property (strong) SVector *counterclockwiseLocation;
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak) UITableView *tableView;
 
-//@property (weak, nonatomic) IBOutlet UITableViewCell *knownCoordinatesCell;
-//@property (weak, nonatomic) IBOutlet UITableViewCell *clockwiseCoordinatesCell;
-//@property (weak, nonatomic) IBOutlet UITableViewCell *counterclockwiseCoordinatesCell;
-@property (weak, nonatomic) IBOutlet UILabel *knownCoordinatesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *clockwiseCoordinatesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *counterclockwiseCoordinatesLabel;
-
-- (IBAction)plotStrongholds:(id)sender;
-
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField;
-
+- (void)textFieldDidEndEditing:(UITextField *)theTextField;
 @end

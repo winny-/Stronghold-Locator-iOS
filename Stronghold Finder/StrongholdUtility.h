@@ -26,6 +26,7 @@ typedef enum {
 - (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF;
 
 - (NSString *)description;
+- (SVector *)copyWithZone:(NSZone *)zone;
 
 @end
 
@@ -34,5 +35,6 @@ typedef enum {
 
 + (SVector *)locateStrongholdWithVector1:(SVector *)vector1 Vector2:(SVector *)vector2;
 + (NSDictionary *)guessStrongholdLocations:(SVector *)knownStrongholdLocation;
-
++ (SVector *)parseSVectorFromString:(NSString *)string withF:(BOOL)withF;
++ (SVector *)parseSVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF;
 @end

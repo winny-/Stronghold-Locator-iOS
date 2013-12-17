@@ -8,6 +8,7 @@
 
 #import "StrongholdUtility.h"
 
+#pragma mark SVector
 @implementation SVector
 
 - (id)init {
@@ -41,12 +42,20 @@
 }
 
 - (NSString *)description {
-    return [[NSString alloc] initWithFormat:@"<SVector X=%@ Z=%@ F=%@>", self.x, self.z, self.f];
+    if (self.f != nil) {
+        return [[NSString alloc] initWithFormat:@"%@, %@, %@", self.x, self.z, self.f];
+    }
+    return [[NSString alloc] initWithFormat:@"%@, %@", self.x, self.z];
+}
+
+- (SVector *)copyWithZone:(NSZone *)zone {
+    return [[[self class] allocWithZone:zone] initWithX:self.x Z:self.z F:self.f];
 }
 
 @end
 
 
+#pragma - mark StrongholdUtility
 @implementation StrongholdUtility
 
 + (SVector *)locateStrongholdWithVector1:(SVector *)vector1 Vector2:(SVector *)vector2 {
@@ -77,7 +86,8 @@
     tmp = f2 * (z+z2);
     x = tmp - x2;
     
-    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5] Z:[[NSNumber alloc] initWithInt:z + 0.5]];
+    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5]
+                                    Z:[[NSNumber alloc] initWithInt:z + 0.5]];
 }
 
 
@@ -87,6 +97,57 @@
              @"clockwise": [knownStrongholdLocation rotate:SVectorRotateClockwise],
              @"counterclockwise": [knownStrongholdLocation rotate:SVectorRotateCounterclockwise]
              };
+}
+
++ (SVector *)parseSVectorFromString:(NSString *)string withF:(BOOL)withF {
+    
+    NSString *pattern;
+    if (withF) {
+        pattern = @"^(-?[0-9]+), ?(-?[0-9]+), ?(-?[0-9]+)$";
+    } else {
+        pattern = @"^(-?[0-9]+), ?(-?[0-9]+)$";
+    }
+    
+    NSRange range = NSMakeRange(0, string.length);
+    NSError *error;
+    NSRegularExpression *locationRegularExpression = [NSRegularExpression
+                                                       regularExpressionWithPattern:pattern
+                                                       options:0
+                                                       error:&error];
+    
+    NSArray *ary = [locationRegularExpression matchesInString:string options:0 range:range];
+    if (ary.count != 1) {
+        return nil;
+    }
+    
+    NSTextCheckingResult *result = ary[0];
+    NSRange xRange = [result rangeAtIndex:1];
+    NSRange zRange = [result rangeAtIndex:2];
+    NSRange fRange;
+    if (withF) {
+        fRange = [result rangeAtIndex:3];
+    }
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterNoStyle];
+    
+    NSNumber *x = [formatter numberFromString:[string substringWithRange:xRange]];
+    NSNumber *z = [formatter numberFromString:[string substringWithRange:zRange]];
+    NSNumber *f;
+    if (withF) {
+        f = [formatter numberFromString:[string substringWithRange:fRange]];
+    }
+    
+    return [[SVector alloc] initWithX:x Z:z F:f];
+}
+
++ (SVector *)parseSVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF {
+    SVector *vector = [StrongholdUtility parseSVectorFromString:theTextField.text withF:withF];
+    if (vector == nil) {
+        theTextField.backgroundColor = [UIColor redColor];
+    } else {
+        theTextField.backgroundColor = [UIColor whiteColor];
+    }
+    return vector;
 }
 
 @end

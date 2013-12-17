@@ -7,30 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StrongholdUtility.h"
 
 @interface LocateStrongholdModelController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *x1TextField;
-@property (weak, nonatomic) IBOutlet UITextField *z1TextField;
-@property (weak, nonatomic) IBOutlet UITextField *f1TextField;
+@property (weak, nonatomic) IBOutlet UITextField *location1TextField;
+@property (weak, nonatomic) IBOutlet UITextField *location2TextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *x2TextField;
-@property (weak, nonatomic) IBOutlet UITextField *z2TextField;
-@property (weak, nonatomic) IBOutlet UITextField *f2TextField;
+@property (weak, nonatomic) IBOutlet UILabel *strongholdLocationLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *xResultLabel;
-@property (weak, nonatomic) IBOutlet UILabel *zResultLabel;
-@property (strong) NSNumber *xResultNumber;
-@property (strong) NSNumber *zResultNumber;
-
-@property BOOL inputIsValid;
+@property (strong) SVector *result;
 
 @property (weak, nonatomic) IBOutlet UIButton *sendCoordinatesToPasteboardButton;
 
 
-- (IBAction)locate:(id)sender;
 - (IBAction)sendCoordinatesToPasteboard:(id)sender;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField;
-
+- (void)textFieldDidEndEditing:(UITextField *)theTextField;
 @end
