@@ -28,17 +28,17 @@
 }
 
 - (void)locate {
-    SVector *location1, *location2;
+    Minecraft2DVector *location1, *location2;
     
-    location1 = [StrongholdUtility parseSVectorFromTextField:self.location1TextField withF:YES];
-    location2 = [StrongholdUtility parseSVectorFromTextField:self.location2TextField withF:YES];
+    location1 = [StrongholdUtility parseMinecraft2DVectorFromTextField:self.location1TextField withF:YES];
+    location2 = [StrongholdUtility parseMinecraft2DVectorFromTextField:self.location2TextField withF:YES];
     
     if (location1 == nil || location2 == nil) {
         NSLog(@"Invalid input, returning.");
         return;
     }
     
-    SVector *result;
+    Minecraft2DVector *result;
 
     
     NSLog(@"location1=%@", location1);

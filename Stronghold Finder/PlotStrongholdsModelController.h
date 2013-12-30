@@ -13,9 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *knownTextField;
 
-@property (strong) SVector *knownLocation;
-@property (strong) SVector *clockwiseLocation;
-@property (strong) SVector *counterclockwiseLocation;
+@property (strong) Minecraft2DVector *knownLocation;
+@property (strong) Minecraft2DVector *clockwiseLocation;
+@property (strong) Minecraft2DVector *counterclockwiseLocation;
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak) UITableView *tableView;

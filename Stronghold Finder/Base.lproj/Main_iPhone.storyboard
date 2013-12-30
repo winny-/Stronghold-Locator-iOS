@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -90,6 +90,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jdR-pK-mrO">
+            <objects>
+                <viewController id="lNU-it-GLR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DQ8-tX-sAJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="QSN-ut-pwg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TSX-qn-j2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ewT-Y3-JPX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9e-gH-5Hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-1847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OTd-Wn-bgF">
+            <objects>
+                <viewController id="tZj-7R-eDN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5fE-T6-1x4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wgc-2l-I7s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QEe-hI-AkD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGy-jV-2CR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iK2-Ej-48q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-1134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TTe-do-B5u">
+            <objects>
+                <viewController id="Q42-Ea-Wrb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6MD-YU-7nD"/>
+                        <viewControllerLayoutGuide type="bottom" id="a7a-Mk-aTd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ivR-gd-8qS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dK2-3j-Cqm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hy8-XM-BCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-470"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Gqp-qC-9hG">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="obv-OH-8PG" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="lNU-it-GLR" kind="push" id="IXr-sB-hRX"/>
+                        <segue destination="tZj-7R-eDN" kind="push" id="7gr-5h-6TN"/>
+                        <segue destination="Q42-Ea-Wrb" kind="push" id="Njr-fi-0w3"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zad-3W-MMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="-982"/>
         </scene>
         <!--Plot Strongholds Model Controller - Plot Strongholds-->
         <scene sceneID="ot8-2e-RuS">

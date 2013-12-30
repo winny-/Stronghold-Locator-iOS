@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *strongholdLocationLabel;
 
-@property (strong) SVector *result;
+@property (strong) Minecraft2DVector *result;
 
 @property (weak, nonatomic) IBOutlet UIButton *sendCoordinatesToPasteboardButton;
 

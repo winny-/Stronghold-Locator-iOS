@@ -8,9 +8,8 @@
 
 #import "StrongholdUtility.h"
 
-#pragma mark SVector
-@implementation SVector
-
+#pragma mark MinecraftCoordinate
+@implementation MinecraftCoordinate
 - (id)init {
     self = [super init];
     return self;
@@ -23,33 +22,54 @@
     return self;
 }
 
+- (id)initWithX:(NSNumber *)myX Y:(NSNumber *)myY Z:(NSNumber *)myZ {
+    self = [self initWithX:myX Z:myZ];
+    self.y = [myY copy];
+    return self;
+}
+
+- (NSString *)description {
+    if (self.y != nil) {
+        return [[NSString alloc] initWithFormat:@"%@, %@, %@", self.x, self.y, self.z];
+    }
+    return [[NSString alloc] initWithFormat:@"%@, %@", self.x, self.z];
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    // Needs either implicit or explicit cast from (id *) or it'll run into namespace issues (WTF).
+    MinecraftCoordinate *mc = [[self class] alloc];
+    return [mc initWithX:self.x Y:self.y Z:self.z];
+//    return [[[self class] alloc] initWithX:self.x Y:self.y Z:self.z]
+}
+
+@end
+
+
+#pragma mark - Minecraft2DVector
+@implementation Minecraft2DVector
+
 - (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF {
-    self = [self init];
-    self.x = [myX copy];
-    self.z = [myZ copy];
+    self = [self initWithX:myX Z:myZ];
     self.f = [myF copy];
     return self;
 }
 
-- (SVector *)rotate:(SVectorRotatateDirection)direction {
+- (Minecraft2DVector *)rotate:(SVectorRotatateDirection)direction {
     float multiplier = (direction == SVectorRotateClockwise) ? -1 : 1;
     float r = radians(120 * multiplier);
     
     float x = cosf(r) * self.x.floatValue + -sinf(r) * self.z.floatValue;
     float z = sinf(r) * self.x.floatValue + cosf(r) * self.z.floatValue;
     
-    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithFloat:x] Z:[[NSNumber alloc] initWithFloat:z]];
+    return [[Minecraft2DVector alloc] initWithX:[[NSNumber alloc] initWithFloat:x] Z:[[NSNumber alloc] initWithFloat:z]];
 }
 
 - (NSString *)description {
-    if (self.f != nil) {
-        return [[NSString alloc] initWithFormat:@"%@, %@, %@", self.x, self.z, self.f];
-    }
-    return [[NSString alloc] initWithFormat:@"%@, %@", self.x, self.z];
+    return [[NSString alloc] initWithFormat:@"%@, %@, %@", self.x, self.z, self.f];
 }
 
-- (SVector *)copyWithZone:(NSZone *)zone {
-    return [[[self class] allocWithZone:zone] initWithX:self.x Z:self.z F:self.f];
+- (id)copyWithZone:(NSZone *)zone {
+    return [[[self class] alloc] initWithX:self.x Z:self.z F:self.f];
 }
 
 @end
@@ -58,7 +78,7 @@
 #pragma - mark StrongholdUtility
 @implementation StrongholdUtility
 
-+ (SVector *)locateStrongholdWithVector1:(SVector *)vector1 Vector2:(SVector *)vector2 {
++ (Minecraft2DVector *)locateStrongholdWithVector1:(Minecraft2DVector *)vector1 Vector2:(Minecraft2DVector *)vector2 {
     float x1 = -vector1.x.floatValue;
     float z1 = -vector1.z.floatValue;
     float f1 = -vector1.f.floatValue;
@@ -86,12 +106,12 @@
     tmp = f2 * (z+z2);
     x = tmp - x2;
     
-    return [[SVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5]
+    return [[Minecraft2DVector alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5]
                                     Z:[[NSNumber alloc] initWithInt:z + 0.5]];
 }
 
 
-+ (NSDictionary *)guessStrongholdLocations:(SVector *)knownStrongholdLocation {
++ (NSDictionary *)guessStrongholdLocations:(Minecraft2DVector *)knownStrongholdLocation {
     return @{
              @"known": knownStrongholdLocation,
              @"clockwise": [knownStrongholdLocation rotate:SVectorRotateClockwise],
@@ -99,7 +119,7 @@
              };
 }
 
-+ (SVector *)parseSVectorFromString:(NSString *)string withF:(BOOL)withF {
++ (Minecraft2DVector *)parseMinecraft2DVectorFromString:(NSString *)string withF:(BOOL)withF {
     
     NSString *pattern;
     if (withF) {
@@ -137,11 +157,11 @@
         f = [formatter numberFromString:[string substringWithRange:fRange]];
     }
     
-    return [[SVector alloc] initWithX:x Z:z F:f];
+    return [[Minecraft2DVector alloc] initWithX:x Z:z F:f];
 }
 
-+ (SVector *)parseSVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF {
-    SVector *vector = [StrongholdUtility parseSVectorFromString:theTextField.text withF:withF];
++ (Minecraft2DVector *)parseMinecraft2DVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF {
+    Minecraft2DVector *vector = [StrongholdUtility parseMinecraft2DVectorFromString:theTextField.text withF:withF];
     if (vector == nil) {
         theTextField.backgroundColor = [UIColor redColor];
     } else {

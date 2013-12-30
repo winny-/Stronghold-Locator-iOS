@@ -16,25 +16,39 @@ typedef enum {
 
 #define radians(degrees) degrees * (M_PI / 180)
 
-@interface SVector : NSObject
+#pragma mark - MinecraftCoordinate
+@interface MinecraftCoordinate : NSObject
 
 @property NSNumber *x;
-@property NSNumber *f;
+@property NSNumber *y;
 @property NSNumber *z;
 
 - (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ;
-- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF;
+- (id)initWithX:(NSNumber *)myX Y:(NSNumber *)myY Z:(NSNumber *)myZ;
 
 - (NSString *)description;
-- (SVector *)copyWithZone:(NSZone *)zone;
+- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
+#pragma mark - Minecraft2DVector
+@interface Minecraft2DVector : MinecraftCoordinate
 
+@property NSNumber *f;
+
+- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF;
+
+- (NSString *)description;
+- (id)copyWithZone:(NSZone *)zone;
+
+@end
+
+#pragma mark - StrongholdUtility
 @interface StrongholdUtility : NSObject
 
-+ (SVector *)locateStrongholdWithVector1:(SVector *)vector1 Vector2:(SVector *)vector2;
-+ (NSDictionary *)guessStrongholdLocations:(SVector *)knownStrongholdLocation;
-+ (SVector *)parseSVectorFromString:(NSString *)string withF:(BOOL)withF;
-+ (SVector *)parseSVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF;
++ (Minecraft2DVector *)locateStrongholdWithVector1:(Minecraft2DVector *)vector1 Vector2:(Minecraft2DVector *)vector2;
++ (NSDictionary *)guessStrongholdLocations:(Minecraft2DVector *)knownStrongholdLocation;
++ (Minecraft2DVector *)parseMinecraft2DVectorFromString:(NSString *)string withF:(BOOL)withF;
++ (Minecraft2DVector *)parseMinecraft2DVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF;
+
 @end
