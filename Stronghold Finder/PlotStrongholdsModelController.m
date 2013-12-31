@@ -29,7 +29,7 @@
 }
 
 - (void)plotStrongholds {
-    self.knownLocation = [StrongholdUtility parseMinecraft2DVectorFromTextField:self.knownTextField withF:NO];
+    self.knownLocation = [Minecraft2DCoordinate parseFromTextField:self.knownTextField];
     
     if (self.knownLocation == nil) {
         NSLog(@"Invalid input, returning.");

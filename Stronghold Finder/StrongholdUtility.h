@@ -9,32 +9,41 @@
 #import <Foundation/Foundation.h>
 #import <math.h>
 
+
 typedef enum {
-    SVectorRotateClockwise,
-    SVectorRotateCounterclockwise
-} SVectorRotatateDirection;
+    Minecraft2DCoordinateRotateClockwise,
+    Minecraft2DCoordinateRotateCounterclockwise
+} Minecraft2DCoordinateRotatateDirection;
 
 #define radians(degrees) degrees * (M_PI / 180)
 
-#pragma mark - MinecraftCoordinate
-@interface MinecraftCoordinate : NSObject
+
+#pragma mark - Minecraft2DCoordinate
+@interface Minecraft2DCoordinate : NSObject
 
 @property NSNumber *x;
-@property NSNumber *y;
 @property NSNumber *z;
 
++ (Minecraft2DCoordinate *)parseFromString:(NSString *)string;
++ (Minecraft2DCoordinate *)parseFromTextField:(UITextField *)theTextField;
+
 - (id)initWithX:(NSNumber *)x Z:(NSNumber *)z;
-- (id)initWithX:(NSNumber *)x Y:(NSNumber *)y Z:(NSNumber *)z;
 
 - (NSString *)description;
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-#pragma mark - Minecraft2DVector
-@interface Minecraft2DVector : MinecraftCoordinate
 
+#pragma mark - Minecraft2DVector
+@interface Minecraft2DVector : NSObject
+
+@property NSNumber *x;
+@property NSNumber *z;
 @property NSNumber *f;
+
++ (Minecraft2DVector *)parseFromString:(NSString *)string;
++ (Minecraft2DVector *)parseFromTextField:(UITextField *)theTextField;
 
 - (id)initWithX:(NSNumber *)x Z:(NSNumber *)z F:(NSNumber *)f;
 
@@ -43,12 +52,11 @@ typedef enum {
 
 @end
 
+
 #pragma mark - StrongholdUtility
 @interface StrongholdUtility : NSObject
 
 + (Minecraft2DVector *)locateStrongholdWithVector1:(Minecraft2DVector *)vector1 Vector2:(Minecraft2DVector *)vector2;
-+ (NSDictionary *)guessStrongholdLocations:(Minecraft2DVector *)knownStrongholdLocation;
-+ (Minecraft2DVector *)parseMinecraft2DVectorFromString:(NSString *)string withF:(BOOL)withF;
-+ (Minecraft2DVector *)parseMinecraft2DVectorFromTextField:(UITextField *)theTextField withF:(BOOL)withF;
++ (NSDictionary *)guessStrongholdLocations:(Minecraft2DCoordinate *)knownStrongholdLocation;
 
 @end
