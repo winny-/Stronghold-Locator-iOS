@@ -15,16 +15,16 @@
     return self;
 }
 
-- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ {
+- (id)initWithX:(NSNumber *)x Z:(NSNumber *)z {
     self = [self init];
-    self.x = [myX copy];
-    self.z = [myZ copy];
+    self.x = [x copy];
+    self.z = [z copy];
     return self;
 }
 
-- (id)initWithX:(NSNumber *)myX Y:(NSNumber *)myY Z:(NSNumber *)myZ {
-    self = [self initWithX:myX Z:myZ];
-    self.y = [myY copy];
+- (id)initWithX:(NSNumber *)x Y:(NSNumber *)y Z:(NSNumber *)z {
+    self = [self initWithX:x Z:z];
+    self.y = [y copy];
     return self;
 }
 
@@ -39,7 +39,6 @@
     // Needs either implicit or explicit cast from (id *) or it'll run into namespace issues (WTF).
     MinecraftCoordinate *mc = [[self class] alloc];
     return [mc initWithX:self.x Y:self.y Z:self.z];
-//    return [[[self class] alloc] initWithX:self.x Y:self.y Z:self.z]
 }
 
 @end
@@ -48,9 +47,9 @@
 #pragma mark - Minecraft2DVector
 @implementation Minecraft2DVector
 
-- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF {
-    self = [self initWithX:myX Z:myZ];
-    self.f = [myF copy];
+- (id)initWithX:(NSNumber *)x Z:(NSNumber *)z F:(NSNumber *)f {
+    self = [self initWithX:x Z:z];
+    self.f = [f copy];
     return self;
 }
 

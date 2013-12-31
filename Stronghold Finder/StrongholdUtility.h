@@ -23,8 +23,8 @@ typedef enum {
 @property NSNumber *y;
 @property NSNumber *z;
 
-- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ;
-- (id)initWithX:(NSNumber *)myX Y:(NSNumber *)myY Z:(NSNumber *)myZ;
+- (id)initWithX:(NSNumber *)x Z:(NSNumber *)z;
+- (id)initWithX:(NSNumber *)x Y:(NSNumber *)y Z:(NSNumber *)z;
 
 - (NSString *)description;
 - (id)copyWithZone:(NSZone *)zone;
@@ -36,7 +36,7 @@ typedef enum {
 
 @property NSNumber *f;
 
-- (id)initWithX:(NSNumber *)myX Z:(NSNumber *)myZ F:(NSNumber *)myF;
+- (id)initWithX:(NSNumber *)x Z:(NSNumber *)z F:(NSNumber *)f;
 
 - (NSString *)description;
 - (id)copyWithZone:(NSZone *)zone;
