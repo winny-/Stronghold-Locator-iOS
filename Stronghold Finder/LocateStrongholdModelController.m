@@ -34,7 +34,7 @@
     location2 = [Minecraft2DVector parseFromTextField:self.location2TextField];
     
     if (location1 == nil || location2 == nil) {
-        NSLog(@"Invalid input, returning.");
+        NSLog(@"%s: invalid input, returning.", __func__);
         return;
     }
     

@@ -171,7 +171,7 @@
     x = tmp - x2;
     
     return [[Minecraft2DCoordinate alloc] initWithX:[[NSNumber alloc] initWithInt:x + 0.5]
-                                    Z:[[NSNumber alloc] initWithInt:z + 0.5]];
+                                                  Z:[[NSNumber alloc] initWithInt:z + 0.5]];
 }
 
 
