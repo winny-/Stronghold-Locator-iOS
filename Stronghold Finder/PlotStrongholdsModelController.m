@@ -32,7 +32,8 @@
     self.knownLocation = [Minecraft2DCoordinate parseFromTextField:self.knownTextField];
     
     if (self.knownLocation == nil) {
-        NSLog(@"%s: invalid input, returning.", __func__);
+        NSLog(@"%s: invalid input (knownTextField = \"%@\" parsed \"%@\"), returning.", __func__,
+              self.knownTextField.text, self.knownLocation);
         return;
     }
     
