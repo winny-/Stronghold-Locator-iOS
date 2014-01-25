@@ -15,6 +15,8 @@
 
 @implementation PlotStrongholdsModelController
 
+#pragma mark - UIViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,6 +29,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [self.knownTextField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)theTextField {
+    [self plotStrongholds];
+}
+
+#pragma mark - PlotStrongholdsModelController
 
 - (void)plotStrongholds {
     self.knownLocation = [Minecraft2DCoordinate parseFromTextField:self.knownTextField];
@@ -57,13 +73,4 @@
     [counterclockwiseCell setNeedsLayout];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [self.knownTextField resignFirstResponder];
-    
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)theTextField {
-    [self plotStrongholds];
-}
 @end
