@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442A9D5C1886FD8E001A9208 /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */; };
 		448BF1101815B26D00EF99C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF10F1815B26D00EF99C2 /* Foundation.framework */; };
 		448BF1121815B26D00EF99C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1111815B26D00EF99C2 /* CoreGraphics.framework */; };
 		448BF1141815B26D00EF99C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1131815B26D00EF99C2 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		442A9D5A1886FD8E001A9208 /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialPageViewController.h; path = ../TutorialPageViewController.h; sourceTree = "<group>"; };
+		442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialPageViewController.m; path = ../TutorialPageViewController.m; sourceTree = "<group>"; };
 		448BF10C1815B26D00EF99C2 /* Stronghold Locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stronghold Locator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		448BF10F1815B26D00EF99C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		448BF1111815B26D00EF99C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 		448BF1151815B26D00EF99C2 /* Stronghold Finder */ = {
 			isa = PBXGroup;
 			children = (
+				442A9D5A1886FD8E001A9208 /* TutorialPageViewController.h */,
+				442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */,
 				448BF11E1815B26D00EF99C2 /* AppDelegate.h */,
 				448BF11F1815B26D00EF99C2 /* AppDelegate.m */,
 				448BF1211815B26D00EF99C2 /* Main_iPhone.storyboard */,
@@ -267,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				448BF12C1815B26D00EF99C2 /* PlotStrongholdsModelController.m in Sources */,
+				442A9D5C1886FD8E001A9208 /* TutorialPageViewController.m in Sources */,
 				448BF1201815B26D00EF99C2 /* AppDelegate.m in Sources */,
 				448BF1291815B26D00EF99C2 /* LocateStrongholdModelController.m in Sources */,
 				448BF1961815CBFE00EF99C2 /* StrongholdUtility.m in Sources */,
