@@ -104,7 +104,7 @@
                             <constraint firstItem="yZu-8K-9Da" firstAttribute="leading" secondItem="STS-8z-YFV" secondAttribute="leading" id="vbD-wc-jC6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Locate Stronghold" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Locate Stronghold" image="locate" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="location1TextField" destination="V2w-6f-UJM" id="0B2-Xy-4UB"/>
                         <outlet property="location2TextField" destination="a83-m9-grk" id="fsZ-he-fRu"/>
@@ -200,12 +200,12 @@
             </objects>
             <point key="canvasLocation" x="1727" y="-422"/>
         </scene>
-        <!--Tutorial Page View Controller - Item-->
+        <!--Tutorial Page View Controller - Tutorial-->
         <scene sceneID="Gqp-qC-9hG">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="obv-OH-8PG" customClass="TutorialPageViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="6qj-8y-9tV"/>
+                    <tabBarItem key="tabBarItem" title="Tutorial" image="tutorial" id="6qj-8y-9tV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zad-3W-MMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +255,7 @@
                             <constraint firstItem="deJ-rc-OQz" firstAttribute="leading" secondItem="gMD-aP-Fq6" secondAttribute="leading" constant="20" symbolic="YES" id="xvS-XG-Mhs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Plot Strongholds" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Guess Stronghold Locations" image="guess" id="Z7h-1E-pvt"/>
                     <connections>
                         <outlet property="containerView" destination="deJ-rc-OQz" id="P1r-vj-tAP"/>
                         <outlet property="knownTextField" destination="bMA-AY-2ka" id="liR-l8-snK"/>
@@ -383,8 +383,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="guess" width="30" height="30"/>
+        <image name="locate" width="30" height="30"/>
+        <image name="tutorial" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
