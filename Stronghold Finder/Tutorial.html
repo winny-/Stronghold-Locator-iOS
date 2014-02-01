@@ -1,0 +1,37 @@
+<head>
+    <style>
+        img.figure {
+            height:auto;
+            width:100%;
+        }
+        img.header {
+            height:20pt;
+            width:auto;
+        }
+    body {
+        font-family:sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <h1>Stronghold Locator Tutorial</h1>
+    <h2>Introduction</h2>
+    <p>Thank you for downloading Stronghold Locator! The following pages will brief you on how to best use this app. The goal is simple: find Strongholds in Minecraft for PC without knowing the seed. This is achieved using the debug (accessible in-game by pressing F3) information. Only three debug values are used: </p>
+    <ul>
+        <li>X (in the parenthesis)</li>
+        <li>Z (in the parenthesis)</li>
+        <li>F (otherwise known as the "facing value" &mdash; it's the direction your player is facing.)</li>
+    </ul>
+    <p>Please note that all values can be negative and this makes a difference. No decimal part is necessary for any numbers used in Stronghold Locator except for the F value &mdash; include two digits after the decimal point for F.</p>
+    <p>Scroll down to learn about the Locate Stronghold and Guess Stronghold Locations functions.</p>
+    <h2><img class="header" src="locate.png"/>&nbsp;Locate Stronghold</h2>
+    <p>Using two known locations with vectors (which direction your player is facing at the time), you can triangulate the closest Stronghold. All you need is a few Eye of Enders crafted from a Blaze Rod and an Ender Pearl. Make sure you debug overlay open by pressing F3. Notice the X, Z, and F fields &mdash; this is all the information you'll need to write down.</p>
+    <img class="figure" src="debug.png"/>
+    <p>Alright! Let's get started. While standing still, throw an Eye of Ender. Quickly use the mouse to position the crosshair over the Eye of Ender as it hovers before you. Write down the X and Z values, omitting everything to the right of the decimal point. Now write down the F value, noting its sign and keeping two digits after the decimal point.</p>
+    <img class="figure" src="aiming.png"/>
+    <p>Walk at least 100 blocks in a direction perpendicular to the way the Eye of Ender floated. Throw your Eye of Ender, again, and write down this pair of X, Z, and F values.</p>
+    
+    <p>Punch this data into the Locate Stronghold tab and make your way to the resulting coordinate pair. Dig like you've never dug before, for there will be a Stronghold beneath your feet! And you've done it!</p>
+    <h2><img class="header" src="guess.png"/>&nbsp;Guess Stronghold Locations</h2>
+    <p>Using a known Stronghold location, you can guess roughly where the other two Strongholds are located. Make your way to one of the resulting coordinate pairs and use the Locate Stronghold tab to find the nearby Stronghold.</p>
+</body>

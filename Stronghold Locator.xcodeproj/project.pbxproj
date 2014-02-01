@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		442A9D5C1886FD8E001A9208 /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */; };
+		44799A52189D86FC002520EA /* Tutorial.html in Resources */ = {isa = PBXBuildFile; fileRef = 44799A51189D86FC002520EA /* Tutorial.html */; };
+		44799A55189D8788002520EA /* aiming.png in Resources */ = {isa = PBXBuildFile; fileRef = 44799A53189D8788002520EA /* aiming.png */; };
+		44799A56189D8788002520EA /* debug.png in Resources */ = {isa = PBXBuildFile; fileRef = 44799A54189D8788002520EA /* debug.png */; };
+		44799A5C189D88E2002520EA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44799A5B189D88E2002520EA /* TutorialViewController.m */; };
+		44799A63189D8D1E002520EA /* guess.png in Resources */ = {isa = PBXBuildFile; fileRef = 44799A61189D8D1E002520EA /* guess.png */; };
+		44799A64189D8D1E002520EA /* locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 44799A62189D8D1E002520EA /* locate.png */; };
 		448BF1101815B26D00EF99C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF10F1815B26D00EF99C2 /* Foundation.framework */; };
 		448BF1121815B26D00EF99C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1111815B26D00EF99C2 /* CoreGraphics.framework */; };
 		448BF1141815B26D00EF99C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF1131815B26D00EF99C2 /* UIKit.framework */; };
@@ -38,8 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		442A9D5A1886FD8E001A9208 /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialPageViewController.h; path = ../TutorialPageViewController.h; sourceTree = "<group>"; };
-		442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialPageViewController.m; path = ../TutorialPageViewController.m; sourceTree = "<group>"; };
+		44799A51189D86FC002520EA /* Tutorial.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Tutorial.html; sourceTree = "<group>"; };
+		44799A53189D8788002520EA /* aiming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aiming.png; sourceTree = "<group>"; };
+		44799A54189D8788002520EA /* debug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debug.png; sourceTree = "<group>"; };
+		44799A5A189D88E2002520EA /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		44799A5B189D88E2002520EA /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		44799A61189D8D1E002520EA /* guess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guess.png; sourceTree = "<group>"; };
+		44799A62189D8D1E002520EA /* locate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate.png; sourceTree = "<group>"; };
 		448BF10C1815B26D00EF99C2 /* Stronghold Locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stronghold Locator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		448BF10F1815B26D00EF99C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		448BF1111815B26D00EF99C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,8 +133,8 @@
 		448BF1151815B26D00EF99C2 /* Stronghold Finder */ = {
 			isa = PBXGroup;
 			children = (
-				442A9D5A1886FD8E001A9208 /* TutorialPageViewController.h */,
-				442A9D5B1886FD8E001A9208 /* TutorialPageViewController.m */,
+				44799A5A189D88E2002520EA /* TutorialViewController.h */,
+				44799A5B189D88E2002520EA /* TutorialViewController.m */,
 				448BF11E1815B26D00EF99C2 /* AppDelegate.h */,
 				448BF11F1815B26D00EF99C2 /* AppDelegate.m */,
 				448BF1211815B26D00EF99C2 /* Main_iPhone.storyboard */,
@@ -133,10 +143,15 @@
 				448BF1241815B26D00EF99C2 /* Main_iPad.storyboard */,
 				448BF1271815B26D00EF99C2 /* LocateStrongholdModelController.h */,
 				448BF1281815B26D00EF99C2 /* LocateStrongholdModelController.m */,
+				44799A61189D8D1E002520EA /* guess.png */,
+				44799A62189D8D1E002520EA /* locate.png */,
 				448BF12A1815B26D00EF99C2 /* PlotStrongholdsModelController.h */,
+				44799A53189D8788002520EA /* aiming.png */,
+				44799A54189D8788002520EA /* debug.png */,
 				448BF12B1815B26D00EF99C2 /* PlotStrongholdsModelController.m */,
 				448BF12D1815B26D00EF99C2 /* Images.xcassets */,
 				448BF1161815B26D00EF99C2 /* Supporting Files */,
+				44799A51189D86FC002520EA /* Tutorial.html */,
 			);
 			path = "Stronghold Finder";
 			sourceTree = "<group>";
@@ -251,8 +266,13 @@
 			files = (
 				448BF1261815B26D00EF99C2 /* Main_iPad.storyboard in Resources */,
 				448BF12E1815B26D00EF99C2 /* Images.xcassets in Resources */,
+				44799A56189D8788002520EA /* debug.png in Resources */,
+				44799A63189D8D1E002520EA /* guess.png in Resources */,
+				44799A55189D8788002520EA /* aiming.png in Resources */,
+				44799A64189D8D1E002520EA /* locate.png in Resources */,
 				448BF1231815B26D00EF99C2 /* Main_iPhone.storyboard in Resources */,
 				448BF11A1815B26D00EF99C2 /* InfoPlist.strings in Resources */,
+				44799A52189D86FC002520EA /* Tutorial.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				448BF12C1815B26D00EF99C2 /* PlotStrongholdsModelController.m in Sources */,
-				442A9D5C1886FD8E001A9208 /* TutorialPageViewController.m in Sources */,
 				448BF1201815B26D00EF99C2 /* AppDelegate.m in Sources */,
+				44799A5C189D88E2002520EA /* TutorialViewController.m in Sources */,
 				448BF1291815B26D00EF99C2 /* LocateStrongholdModelController.m in Sources */,
 				448BF1961815CBFE00EF99C2 /* StrongholdUtility.m in Sources */,
 				448BF11C1815B26D00EF99C2 /* main.m in Sources */,
