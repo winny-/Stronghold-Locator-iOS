@@ -128,26 +128,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Intentially filled *" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-sa-Avq">
-                                <rect key="frame" x="92" y="478" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-CS-TfG">
-                                <rect key="frame" x="40" y="49" width="240" height="401"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-CS-TfG">
+                                <rect key="frame" x="20" y="52" width="280" height="398"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="401" id="06r-dI-hfB"/>
-                                </constraints>
                                 <string key="text">Stronghold Locator has two goals:  1. Rapidly locate Strongholds  2. Guess the location of the other two Strongholds  This tutorial will enable you to utilize Stronghold Locator with ease.  Flip to the right to continue.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Introduction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9s-ST-Cz9">
-                                <rect key="frame" x="99" y="20" width="122" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9s-ST-Cz9">
+                                <rect key="frame" x="99" y="20" width="122" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
@@ -155,12 +145,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aF0-CS-TfG" firstAttribute="leading" secondItem="TSX-qn-j2g" secondAttribute="leading" constant="40" id="PUx-cx-3YM"/>
+                            <constraint firstItem="aF0-CS-TfG" firstAttribute="leading" secondItem="TSX-qn-j2g" secondAttribute="leading" constant="20" symbolic="YES" id="4IS-Ag-bHJ"/>
+                            <constraint firstItem="QSN-ut-pwg" firstAttribute="top" relation="lessThanOrEqual" secondItem="aF0-CS-TfG" secondAttribute="bottom" constant="69" id="Wyh-JF-IRk"/>
                             <constraint firstAttribute="centerX" secondItem="e9s-ST-Cz9" secondAttribute="centerX" id="ZSu-ln-Wz5"/>
+                            <constraint firstItem="aF0-CS-TfG" firstAttribute="top" secondItem="e9s-ST-Cz9" secondAttribute="bottom" constant="8" symbolic="YES" id="ZZR-aj-S5j"/>
+                            <constraint firstItem="e9s-ST-Cz9" firstAttribute="leading" secondItem="TSX-qn-j2g" secondAttribute="leading" constant="99" id="aGJ-rX-poU"/>
+                            <constraint firstItem="e9s-ST-Cz9" firstAttribute="top" secondItem="TSX-qn-j2g" secondAttribute="top" constant="20" symbolic="YES" id="j6a-kW-Tyq"/>
                             <constraint firstItem="aF0-CS-TfG" firstAttribute="centerX" secondItem="TSX-qn-j2g" secondAttribute="centerX" id="jZr-UR-lQa"/>
-                            <constraint firstItem="aF0-CS-TfG" firstAttribute="top" secondItem="TSX-qn-j2g" secondAttribute="top" constant="49" id="kqI-2n-QSB"/>
-                            <constraint firstItem="aF0-CS-TfG" firstAttribute="centerX" secondItem="MQw-sa-Avq" secondAttribute="centerX" id="tJt-97-ytZ"/>
-                            <constraint firstItem="MQw-sa-Avq" firstAttribute="top" secondItem="aF0-CS-TfG" secondAttribute="bottom" constant="28" id="wHP-Ur-Eqb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ewT-Y3-JPX"/>
@@ -182,49 +173,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Intentially filled *" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMP-z6-Dub">
-                                <rect key="frame" x="92" y="478" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate Stronghold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k22-g4-t7w">
-                                <rect key="frame" x="98" y="20" width="163" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locate" translatesAutoresizingMaskIntoConstraints="NO" id="poq-1A-ljq">
-                                <rect key="frame" x="59" y="20" width="31" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="31" id="uhw-vB-fsf"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh4-zf-obh">
-                                <rect key="frame" x="40" y="52" width="240" height="418"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh4-zf-obh">
+                                <rect key="frame" x="20" y="52" width="280" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="418" id="Wow-Jb-we3"/>
                                 </constraints>
-                                <mutableString key="text">The Locate Stronghold tab allows you to rapidly locate Strongholds with as little as one Eye of Ender.  On your desktop Minecraft client, press F3 (fn-F3 on a Mac) to pull up the debug menu. Notice all the values printed on top of the screen. The values that will be utilized with this tool are the X, Z, and F values.  Throw an eye of ender standing still, aim your crosshair to where it hovers in the sky. Enter the X, Z, and F values with two decimal places for the F value.  Travel across at least half a biome, and repeat the step. Enter these values into the second text field. The Stronghold should now be located at the result coordinate pair.</mutableString>
+                                <string key="text">The Locate Stronghold tab allows you to rapidly locate Strongholds with as little as one Eye of Ender.  On your desktop Minecraft client, press F3 (fn-F3 on a Mac) to pull up the debug menu. Notice all the values printed on top of the screen. The values that will be utilized with this tool are the X, Z, and F values.  Throw an eye of ender standing still, aim your crosshair to where it hovers in the sky. Enter the X, Z, and F values with two decimal places for the F value.  Travel across at least half a biome, and repeat the step. Enter these values into the second text field. The Stronghold should now be located at the result coordinate pair.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Wb-Xwi">
+                                <rect key="frame" x="59" y="20" width="202" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locate Stronghold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k22-g4-t7w">
+                                        <rect key="frame" x="39" y="0.0" width="163" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="locate" translatesAutoresizingMaskIntoConstraints="NO" id="poq-1A-ljq">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="31" id="uhw-vB-fsf"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nh4-zf-obh" firstAttribute="leading" secondItem="QEe-hI-AkD" secondAttribute="leading" constant="40" id="1pr-ev-Cge"/>
-                            <constraint firstItem="k22-g4-t7w" firstAttribute="leading" secondItem="poq-1A-ljq" secondAttribute="trailing" constant="8" symbolic="YES" id="2wj-s8-0vN"/>
-                            <constraint firstItem="poq-1A-ljq" firstAttribute="leading" secondItem="QEe-hI-AkD" secondAttribute="leading" constant="59" id="6qg-FN-3CF"/>
-                            <constraint firstItem="Nh4-zf-obh" firstAttribute="top" secondItem="k22-g4-t7w" secondAttribute="bottom" constant="8" symbolic="YES" id="CfI-RU-4hM"/>
-                            <constraint firstItem="gMP-z6-Dub" firstAttribute="top" secondItem="Nh4-zf-obh" secondAttribute="bottom" constant="8" symbolic="YES" id="Iua-5s-J7x"/>
                             <constraint firstItem="Nh4-zf-obh" firstAttribute="centerX" secondItem="QEe-hI-AkD" secondAttribute="centerX" id="Wpo-QP-oNB"/>
-                            <constraint firstItem="Nh4-zf-obh" firstAttribute="top" secondItem="poq-1A-ljq" secondAttribute="bottom" constant="8" symbolic="YES" id="agV-7y-QMm"/>
-                            <constraint firstItem="poq-1A-ljq" firstAttribute="top" secondItem="QEe-hI-AkD" secondAttribute="top" constant="20" symbolic="YES" id="g1j-2b-T5n"/>
-                            <constraint firstItem="Nh4-zf-obh" firstAttribute="centerX" secondItem="gMP-z6-Dub" secondAttribute="centerX" id="tiG-1o-VOI"/>
+                            <constraint firstAttribute="centerX" secondItem="x8Q-Wb-Xwi" secondAttribute="centerX" id="gFN-K7-LYi"/>
                             <constraint firstItem="Nh4-zf-obh" firstAttribute="top" secondItem="QEe-hI-AkD" secondAttribute="top" constant="52" id="wE8-gt-8Kp"/>
                         </constraints>
                     </view>
@@ -254,27 +239,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guess" translatesAutoresizingMaskIntoConstraints="NO" id="Aie-k4-jtX">
-                                <rect key="frame" x="19" y="20" width="22" height="24"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ora-8D-doO">
+                                <rect key="frame" x="26" y="20" width="269" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="wMc-JU-7zI"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Stronghold Locations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6b-Uv-Se0">
-                                <rect key="frame" x="49" y="20" width="250" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="guess" translatesAutoresizingMaskIntoConstraints="NO" id="Aie-k4-jtX">
+                                        <rect key="frame" x="-1" y="0.0" width="22" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="wMc-JU-7zI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guess Stronghold Locations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6b-Uv-Se0">
+                                        <rect key="frame" x="19" y="0.0" width="250" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P6b-Uv-Se0" firstAttribute="top" secondItem="Aie-k4-jtX" secondAttribute="top" id="BMF-eF-rQ6"/>
-                            <constraint firstItem="P6b-Uv-Se0" firstAttribute="leading" secondItem="Aie-k4-jtX" secondAttribute="trailing" constant="8" symbolic="YES" id="ZGU-Pk-1Zu"/>
-                            <constraint firstItem="Aie-k4-jtX" firstAttribute="top" secondItem="ivR-gd-8qS" secondAttribute="top" constant="20" symbolic="YES" id="aeX-Vq-ixK"/>
-                            <constraint firstItem="Aie-k4-jtX" firstAttribute="leading" secondItem="ivR-gd-8qS" secondAttribute="leading" constant="19" id="fDU-LM-nVt"/>
-                            <constraint firstItem="a7a-Mk-aTd" firstAttribute="top" secondItem="Aie-k4-jtX" secondAttribute="bottom" constant="475" id="jBr-SC-hBT"/>
+                            <constraint firstAttribute="centerX" secondItem="ora-8D-doO" secondAttribute="centerX" id="Gir-cs-Iii"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dK2-3j-Cqm"/>
@@ -464,6 +452,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ESg-eP-63e">
+            <objects>
+                <viewController id="8bh-xM-GrN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2if-YE-7eI"/>
+                        <viewControllerLayoutGuide type="bottom" id="R9R-L1-sTO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OGf-Xg-KKR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxa-YL-rq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
