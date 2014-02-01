@@ -59,7 +59,7 @@
     if (location1 == nil || location2 == nil) {
         NSLog(@"%s: invalid input (location1TextField = \"%@\" parsed \"%@\", location2TextField = \"%@\""
               "parsed \"%@\") returning.", __func__, self.location1TextField.text, location1,
-              self.location2TextField, location2);
+              self.location2TextField.text, location2);
         return;
     }
     
