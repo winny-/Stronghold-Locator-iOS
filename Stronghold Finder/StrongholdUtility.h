@@ -17,6 +17,8 @@ typedef enum {
 
 #define radians(degrees) degrees * (M_PI / 180)
 
+#define kMinecraft2DCoordinateRegex @"^\\s*(-?[0-9]+(?:\\.[0-9]+)?),?\\s+(-?[0-9]+(?:\\.[0-9]+)?)\\s*$"
+#define kMinecraft2DVectorRegex @"^\\s*(-?[0-9]+(?:\\.[0-9]+)?),?\\s+(-?[0-9]+(?:\\.[0-9]+)?),?\\s+(-?[0-9]+(?:\\.[0-9]+)?)\\s*$"
 
 #pragma mark - Minecraft2DCoordinate
 @interface Minecraft2DCoordinate : NSObject

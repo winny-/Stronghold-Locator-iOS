@@ -15,7 +15,7 @@
     NSRange range = NSMakeRange(0, string.length);
     NSError *error;
     NSRegularExpression *locationRegularExpression = [NSRegularExpression
-                                                      regularExpressionWithPattern:@"^(-?[0-9]+),? ?(-?[0-9]+)$"
+                                                      regularExpressionWithPattern:kMinecraft2DCoordinateRegex
                                                       options:0
                                                       error:&error];
     
@@ -88,7 +88,7 @@
     NSRange range = NSMakeRange(0, string.length);
     NSError *error;
     NSRegularExpression *locationRegularExpression = [NSRegularExpression
-                                                      regularExpressionWithPattern:@"^(-?[0-9]+),? ?(-?[0-9]+),? ?(-?[0-9]+\\.[0-9]+)$"
+                                                      regularExpressionWithPattern:kMinecraft2DVectorRegex
                                                       options:0
                                                       error:&error];
     
