@@ -139,7 +139,7 @@
 @end
 
 
-#pragma - mark StrongholdUtility
+#pragma mark - StrongholdUtility
 @implementation StrongholdUtility
 
 + (Minecraft2DCoordinate *)locateStrongholdWithVector1:(Minecraft2DVector *)vector1 Vector2:(Minecraft2DVector *)vector2 {
