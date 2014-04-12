@@ -14,11 +14,13 @@
 
 @implementation TutorialViewController
 
+#pragma mark - UIViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization when loaded programmatically.
     }
     return self;
 }
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.web.delegate = self;
     NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"Tutorial" ofType:@"html"];
     [self.web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlFile isDirectory:NO]]];
 }
@@ -35,6 +38,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UIWebViewDelegate
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [UIApplication.sharedApplication openURL:request.URL];
+    return NO;
 }
 
 @end
